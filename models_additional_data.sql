@@ -1,0 +1,57 @@
+-- Additional Model Variants for Other Categories
+-- Run this after models_setup.sql if you want more sample data
+
+-- 718 Models (Cayman & Boxster)
+INSERT INTO model_variants (category_id, name, variant_group, image, fuel_type, drive_type, transmission, acceleration, power_kw, power_ps, top_speed, body_design, seats, is_new, sort_order) VALUES
+(2, '718 Cayman', '718 Cayman Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-cayman-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Manual', '5.1 s', 220, 300, '275 km/h', 'Coupe', 2, FALSE, 1),
+(2, '718 Cayman S', '718 Cayman Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-cayman-s-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Automatic', '4.6 s', 269, 365, '285 km/h', 'Coupe', 2, FALSE, 2),
+(2, '718 Cayman GTS 4.0', '718 Cayman Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-cayman-gts-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Manual', '4.5 s', 294, 400, '293 km/h', 'Coupe', 2, FALSE, 3),
+(2, '718 Boxster', '718 Boxster Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-boxster-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Manual', '5.1 s', 220, 300, '275 km/h', 'Cabriolet', 2, FALSE, 4),
+(2, '718 Boxster S', '718 Boxster Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-boxster-s-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Automatic', '4.6 s', 269, 365, '285 km/h', 'Cabriolet', 2, FALSE, 5),
+(2, '718 Spyder RS', '718 Spyder RS', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-spyder-rs-modelimage-sideshot/model/cfbb8ed6-a3e5-11ec-80f3-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Manual', '3.4 s', 368, 500, '308 km/h', 'Cabriolet', 2, TRUE, 6);
+
+-- Taycan Models (Electric)
+INSERT INTO model_variants (category_id, name, variant_group, image, fuel_type, drive_type, transmission, acceleration, power_kw, power_ps, top_speed, body_design, seats, is_new, sort_order) VALUES
+(4, 'Taycan', 'Taycan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'Rear-Wheel Drive', 'Automatic', '5.4 s', 300, 408, '230 km/h', 'Sedan', 4, FALSE, 1),
+(4, 'Taycan 4S', 'Taycan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-4s-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '4.0 s', 390, 530, '250 km/h', 'Sedan', 4, FALSE, 2),
+(4, 'Taycan Turbo', 'Taycan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-turbo-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '3.2 s', 500, 680, '260 km/h', 'Sedan', 4, FALSE, 3),
+(4, 'Taycan Turbo S', 'Taycan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-turbo-s-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '2.8 s', 560, 761, '260 km/h', 'Sedan', 4, FALSE, 4),
+(4, 'Taycan Cross Turismo', 'Taycan Cross Turismo Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-cross-turismo-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '5.1 s', 300, 408, '220 km/h', 'Wagon', 5, FALSE, 5),
+(4, 'Taycan 4S Cross Turismo', 'Taycan Cross Turismo Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/j1-taycan-4s-cross-turismo-modelimage-sideshot/model/930894d1-6214-11ea-80c4-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '4.1 s', 390, 530, '240 km/h', 'Wagon', 5, FALSE, 6);
+
+-- Panamera Models
+INSERT INTO model_variants (category_id, name, variant_group, image, fuel_type, drive_type, transmission, acceleration, power_kw, power_ps, top_speed, body_design, seats, is_new, sort_order) VALUES
+(5, 'Panamera', 'Panamera Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/g2-panamera-modelimage-sideshot/model/a6f11901-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'Rear-Wheel Drive', 'Automatic', '5.6 s', 243, 330, '264 km/h', 'Sedan', 4, FALSE, 1),
+(5, 'Panamera 4', 'Panamera Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/g2-panamera-4-modelimage-sideshot/model/a6f11901-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '5.3 s', 243, 330, '264 km/h', 'Sedan', 4, FALSE, 2),
+(5, 'Panamera 4 E-Hybrid', 'Panamera Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/g2-panamera-4-e-hybrid-modelimage-sideshot/model/a6f11901-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Hybrid', 'All-Wheel Drive', 'Automatic', '4.4 s', 350, 476, '280 km/h', 'Sedan', 4, FALSE, 3),
+(5, 'Panamera GTS', 'Panamera Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/g2-panamera-gts-modelimage-sideshot/model/a6f11901-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '3.9 s', 368, 500, '302 km/h', 'Sedan', 4, FALSE, 4),
+(5, 'Panamera Turbo E-Hybrid', 'Panamera Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/g2-panamera-turbo-e-hybrid-modelimage-sideshot/model/a6f11901-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Hybrid', 'All-Wheel Drive', 'Automatic', '3.2 s', 500, 680, '315 km/h', 'Sedan', 4, TRUE, 5);
+
+-- Macan Models
+INSERT INTO model_variants (category_id, name, variant_group, image, fuel_type, drive_type, transmission, acceleration, power_kw, power_ps, top_speed, body_design, seats, is_new, sort_order) VALUES
+(6, 'Macan', 'Macan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '6.2 s', 195, 265, '232 km/h', 'SUV', 5, FALSE, 1),
+(6, 'Macan S', 'Macan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-s-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '5.1 s', 280, 380, '259 km/h', 'SUV', 5, FALSE, 2),
+(6, 'Macan GTS', 'Macan Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-gts-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '4.7 s', 324, 440, '272 km/h', 'SUV', 5, FALSE, 3),
+(6, 'Macan Electric', 'Macan Electric Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-electric-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '5.7 s', 250, 340, '220 km/h', 'SUV', 5, TRUE, 4),
+(6, 'Macan 4 Electric', 'Macan Electric Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-4-electric-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '5.2 s', 300, 408, '220 km/h', 'SUV', 5, TRUE, 5),
+(6, 'Macan Turbo Electric', 'Macan Electric Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/95b-macan-turbo-electric-modelimage-sideshot/model/a9e5d5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Electric', 'All-Wheel Drive', 'Automatic', '3.3 s', 470, 639, '260 km/h', 'SUV', 5, TRUE, 6);
+
+-- Cayenne Models
+INSERT INTO model_variants (category_id, name, variant_group, image, fuel_type, drive_type, transmission, acceleration, power_kw, power_ps, top_speed, body_design, seats, is_new, sort_order) VALUES
+(7, 'Cayenne', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '6.2 s', 250, 340, '245 km/h', 'SUV', 5, FALSE, 1),
+(7, 'Cayenne S', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-s-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '5.0 s', 324, 440, '273 km/h', 'SUV', 5, FALSE, 2),
+(7, 'Cayenne E-Hybrid', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-e-hybrid-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Hybrid', 'All-Wheel Drive', 'Automatic', '5.0 s', 340, 462, '253 km/h', 'SUV', 5, FALSE, 3),
+(7, 'Cayenne GTS', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-gts-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '4.5 s', 368, 500, '275 km/h', 'SUV', 5, FALSE, 4),
+(7, 'Cayenne Turbo E-Hybrid', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-turbo-e-hybrid-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Hybrid', 'All-Wheel Drive', 'Automatic', '3.7 s', 500, 680, '295 km/h', 'SUV', 5, FALSE, 5),
+(7, 'Cayenne Turbo GT', 'Cayenne Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-turbo-gt-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '3.3 s', 471, 640, '300 km/h', 'SUV', 5, TRUE, 6),
+(7, 'Cayenne Coupe', 'Cayenne Coupe Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-coupe-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '6.0 s', 250, 340, '243 km/h', 'SUV Coupe', 5, FALSE, 7),
+(7, 'Cayenne S Coupe', 'Cayenne Coupe Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-s-coupe-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '4.9 s', 324, 440, '270 km/h', 'SUV Coupe', 5, FALSE, 8),
+(7, 'Cayenne GTS Coupe', 'Cayenne Coupe Model variants', 'https://files.porsche.com/filestore/image/multimedia/none/9ya-cayenne-gts-coupe-modelimage-sideshot/model/a0c0e5e1-2c6e-11eb-80d1-005056bbdc38/porsche-model.png', 'Gasoline', 'All-Wheel Drive', 'Automatic', '4.4 s', 368, 500, '272 km/h', 'SUV Coupe', 5, FALSE, 9);
+
+-- Update category counts
+UPDATE model_categories SET count = 6 WHERE slug = '718';
+UPDATE model_categories SET count = 6 WHERE slug = 'taycan';
+UPDATE model_categories SET count = 5 WHERE slug = 'panamera';
+UPDATE model_categories SET count = 6 WHERE slug = 'macan';
+UPDATE model_categories SET count = 9 WHERE slug = 'cayenne';
+UPDATE model_categories SET count = (SELECT COUNT(*) FROM model_variants) WHERE slug = 'all';
