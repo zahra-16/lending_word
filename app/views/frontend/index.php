@@ -290,8 +290,8 @@
     <h2 class="discover-title-main reveal delay-1">Discover</h2>
     <div class="discover-grid">
         <?php foreach ($discoverFeatures as $idx => $feature): ?>
-            <a href="/lending_word/discover-detail.php"
-               class="discover-card reveal delay-<?= min($idx+1,5) ?>">
+            <a href="/lending_word/discover-detail.php?slug=<?= urlencode($feature['slug'] ?? '') ?>"
+   class="discover-card reveal delay-<?= min($idx+1,5) ?>">
                 <div class="discover-image">
                     <img src="<?= htmlspecialchars($feature['image']) ?>"
                          alt="<?= htmlspecialchars($feature['title']) ?>">

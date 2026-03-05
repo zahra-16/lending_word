@@ -21,8 +21,6 @@
         body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
         body::before{content:'';position:fixed;top:-300px;left:50%;transform:translateX(-50%);width:1000px;height:500px;background:radial-gradient(ellipse,rgba(201,168,76,0.035) 0%,transparent 65%);pointer-events:none;z-index:0;}
         ::-webkit-scrollbar{width:4px;height:4px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--b3);border-radius:4px;}
-
-        /* TOPBAR */
         .topbar{position:sticky;top:0;z-index:300;height:62px;padding:0 36px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,10,0.82);backdrop-filter:blur(28px) saturate(180%);border-bottom:1px solid var(--b2);}
         .topbar::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(201,168,76,0.3) 40%,rgba(201,168,76,0.3) 60%,transparent 95%);}
         .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -35,11 +33,7 @@
         .tpill{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--r4);font-size:0.73rem;font-weight:500;border:1px solid var(--b2);color:var(--t2);text-decoration:none;transition:all 0.18s;background:var(--bg3);letter-spacing:0.02em;}
         .tpill:hover{border-color:var(--b3);color:var(--t1);background:var(--bg4);}
         .tpill.logout:hover{border-color:rgba(239,96,96,0.28);color:var(--red);background:rgba(239,96,96,0.05);}
-
-        /* LAYOUT */
         .layout{display:flex;min-height:calc(100vh - 62px);}
-
-        /* SIDEBAR */
         .sidebar{width:210px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--b1);padding:18px 8px;position:sticky;top:62px;height:calc(100vh - 62px);overflow-y:auto;}
         .sidebar::-webkit-scrollbar{display:none;}
         .sg{margin-bottom:24px;}
@@ -54,27 +48,17 @@
         .nav-it.on::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:2px;height:13px;background:linear-gradient(180deg,var(--gold),var(--gold2));border-radius:2px;}
         .nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:0.57rem;font-weight:700;padding:2px 5px;border-radius:10px;line-height:1.4;}
         .sdiv{height:1px;background:var(--b1);margin:8px 0;}
-
-        /* MAIN */
         .main{flex:1;padding:30px 38px 80px;min-width:0;position:relative;z-index:1;}
-
-        /* ANIMATIONS */
         .panel{display:none;}
         .panel.on{display:block;animation:panelIn 0.22s cubic-bezier(0.22,1,0.36,1);}
         @keyframes panelIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-
-        /* TOAST */
         .toast{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(45,212,160,0.05);border:1px solid rgba(45,212,160,0.16);border-radius:var(--r2);color:var(--green);font-size:0.81rem;margin-bottom:22px;animation:toastIn 0.3s cubic-bezier(0.34,1.56,0.64,1);}
         @keyframes toastIn{from{opacity:0;transform:translateY(-8px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
         .t-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:blink 2s ease infinite;}
         @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.4;}}
-
-        /* PAGE TITLE */
         .pg-hd{margin-bottom:26px;}
         .pg-hd h1{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:700;color:var(--t1);letter-spacing:-0.02em;line-height:1.1;}
         .pg-hd p{font-size:0.78rem;color:var(--t3);margin-top:4px;}
-
-        /* CARDS */
         .card{background:var(--bg2);border:1px solid var(--b2);border-radius:var(--r3);overflow:hidden;margin-bottom:16px;transition:border-color 0.18s;box-shadow:0 1px 0 rgba(255,255,255,0.03) inset,0 16px 48px rgba(0,0,0,0.42);}
         .card:hover{border-color:var(--b3);}
         .card-hd{display:flex;align-items:center;gap:10px;padding:15px 20px;background:linear-gradient(180deg,var(--bg3) 0%,var(--bg2) 100%);border-bottom:1px solid var(--b1);}
@@ -83,8 +67,6 @@
         .ico-d{background:var(--bg4);border:1px solid var(--b2);color:var(--t3);}
         .card-hd h3{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;color:var(--t1);}
         .card-body{padding:20px;}
-
-        /* FIELDS */
         .fg3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
         .fg2{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;}
         .f{display:flex;flex-direction:column;gap:5px;margin-bottom:13px;}
@@ -96,38 +78,24 @@
         .f textarea{min-height:85px;resize:vertical;}
         .f select option{background:var(--bg4);}
         .img-prev{display:block;max-width:260px;height:130px;object-fit:cover;border-radius:var(--r2);border:1px solid var(--b2);margin-top:8px;opacity:0.78;}
-
-        /* DIVIDERS */
         .fdiv{height:1px;background:linear-gradient(90deg,transparent,var(--b2) 15%,var(--b2) 85%,transparent);margin:17px 0;}
         .slbl{font-family:'Syne',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--t4);margin-bottom:11px;}
-
-        /* CHECKBOX */
         .ck{display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:11px;}
         .ck input{appearance:none;-webkit-appearance:none;width:15px;height:15px;background:var(--bg4);border:1px solid var(--b3);border-radius:4px;cursor:pointer;flex-shrink:0;position:relative;transition:all 0.14s;}
         .ck input:checked{background:rgba(201,168,76,0.15);border-color:var(--gold);}
         .ck input:checked::after{content:'';position:absolute;left:3.5px;top:1px;width:5px;height:9px;border:2px solid var(--gold2);border-left:none;border-top:none;transform:rotate(45deg);}
         .ck span{font-size:0.8rem;color:var(--t2);}
-
-        /* ACTIONS */
         .factions{display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--b1);}
-
-        /* ADD CARD */
         .add-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--b2);border-radius:var(--r3);padding:18px 20px;margin-bottom:14px;position:relative;overflow:hidden;}
         .add-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.28),transparent);}
         .add-hd{font-family:'Syne',sans-serif;font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
-
-        /* SAVE BAR */
         .save-bar{position:sticky;bottom:20px;z-index:100;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 26px;background:rgba(9,9,15,0.88);border:1px solid var(--b3);border-radius:var(--r3);box-shadow:0 8px 40px rgba(0,0,0,0.75),0 0 0 1px var(--b1) inset;margin-top:32px;backdrop-filter:blur(18px);}
-
-        /* BUTTONS */
         .btn-p{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#080500;border:none;border-radius:var(--r2);font-size:0.78rem;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:0.04em;transition:all 0.18s;box-shadow:0 3px 16px rgba(201,168,76,0.22);text-decoration:none;}
         .btn-p:hover{box-shadow:0 5px 26px rgba(201,168,76,0.36);transform:translateY(-1px);}
         .btn-p:active{transform:translateY(0);}
         .btn-g{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:transparent;color:var(--t2);border:1px solid var(--b2);border-radius:var(--r2);font-size:0.78rem;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;transition:all 0.15s;}
         .btn-g:hover{border-color:var(--b3);color:var(--t1);background:var(--bg3);}
         .btn-xs{padding:6px 16px !important;font-size:0.73rem !important;}
-
-        /* TABLE */
         .tbox{background:var(--bg2);border:1px solid var(--b2);border-radius:var(--r3);overflow:hidden;margin-bottom:16px;box-shadow:0 1px 0 rgba(255,255,255,0.025) inset,0 16px 48px rgba(0,0,0,0.4);}
         table{width:100%;border-collapse:collapse;}
         thead th{padding:10px 13px;text-align:left;font-family:'Syne',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--t4);background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--b1);white-space:nowrap;}
@@ -144,8 +112,6 @@
         .ts option{background:var(--bg4);}
         .ta{padding:6px 9px;background:var(--bg4);border:1px solid var(--b2);border-radius:var(--r1);color:var(--t1);font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;resize:vertical;min-height:68px;width:100%;}
         .ta:focus{border-color:var(--b4);}
-
-        /* ACTION BUTTONS */
         .acts{display:flex;flex-wrap:wrap;gap:4px;}
         .ab{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:var(--r1);font-size:0.68rem;font-weight:600;border:1px solid transparent;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.12s;background:transparent;text-decoration:none;white-space:nowrap;}
         .ab-u{border-color:rgba(45,212,160,0.18);color:var(--green);background:rgba(45,212,160,0.04);}
@@ -154,23 +120,16 @@
         .ab-d:hover{background:rgba(239,96,96,0.11);border-color:var(--red);}
         .ab-l{border-color:var(--b2);color:var(--t2);}
         .ab-l:hover{border-color:var(--b3);color:var(--t1);background:var(--bg3);}
-
-        /* EDIT NOTICE */
         .edit-notice{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.16);border-radius:var(--r2);color:var(--gold);font-size:0.78rem;margin-bottom:14px;}
         .edit-notice a{color:var(--gold);opacity:0.65;font-size:0.73rem;text-decoration:underline;}
         .edit-notice a:hover{opacity:1;}
-
-        /* FOOTER */
         .ft-sec{background:var(--bg2);border:1px solid var(--b2);border-radius:var(--r3);overflow:hidden;margin-bottom:14px;}
         .ft-sec-hd{display:flex;align-items:center;padding:12px 17px;background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--b1);}
         .ft-sec-hd h3{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--t1);}
         .ft-body{padding:16px;}
-
-        /* SECTION HEADER */
         .sec-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--b1);}
         .sec-hd h2{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--t1);}
         .sec-cnt{font-size:0.68rem;color:var(--t4);background:var(--bg3);border:1px solid var(--b2);padding:2px 7px;border-radius:var(--r4);}
-
         @media(max-width:1100px){.sidebar{width:178px;}.fg3{grid-template-columns:repeat(2,1fr);}}
         @media(max-width:840px){.sidebar{display:none;}.main{padding:18px 14px 60px;}.fg3,.fg2{grid-template-columns:1fr;}}
     </style>
@@ -216,7 +175,7 @@ $tab = $_GET['tab'] ?? 'content';
             <?php foreach([
                 'content'  => ['fas fa-file-lines',   'Content'],
                 'sound'    => ['fas fa-music',         'Sound'],
-                'featured' => ['fas fa-star',          'Featured Vehicles'], /* ← BARU */
+                'featured' => ['fas fa-star',          'Featured Vehicles'],
                 'models'   => ['fas fa-car-side',      'Models'],
                 'explore'  => ['fas fa-compass',       'Explore Models'],
                 'discover' => ['fas fa-sparkles',      'Discover'],
@@ -239,9 +198,9 @@ $tab = $_GET['tab'] ?? 'content';
                 <?php if ($unreadInquiries > 0):?><span class="nav-badge"><?= $unreadInquiries ?></span><?php endif;?>
             </a>
             <a class="nav-it" href="/lending_word/admin/chat.php">
-    <i class="fas fa-comments"></i>Live Chat
-    <?php if ($chatUnread > 0):?><span class="nav-badge"><?= $chatUnread ?></span><?php endif;?>
-</a>
+                <i class="fas fa-comments"></i>Live Chat
+                <?php if ($chatUnread > 0):?><span class="nav-badge"><?= $chatUnread ?></span><?php endif;?>
+            </a>
         </div>
     </aside>
 
@@ -250,9 +209,7 @@ $tab = $_GET['tab'] ?? 'content';
         <div class="toast"><span class="t-dot"></span><?= htmlspecialchars($success) ?></div>
         <?php endif;?>
 
-        <!-- ══════════════════════════════════════════════════════
-             CONTENT TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- CONTENT TAB -->
         <div class="panel <?= $tab === 'content' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Site Content</h1><p>Edit sections, headlines and copy text</p></div>
             <form method="POST">
@@ -283,9 +240,7 @@ $tab = $_GET['tab'] ?? 'content';
             </form>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             SOUND TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- SOUND TAB -->
         <div class="panel <?= $tab === 'sound' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Sound Section</h1><p>Audio, background image and button config</p></div>
             <form method="POST">
@@ -319,171 +274,59 @@ $tab = $_GET['tab'] ?? 'content';
             </form>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             FEATURED VEHICLES TAB  ← BARU
-        ═══════════════════════════════════════════════════════ -->
+        <!-- FEATURED VEHICLES TAB -->
         <div class="panel <?= $tab === 'featured' ? 'on' : '' ?>">
             <div class="pg-hd">
                 <h1>Featured Vehicles</h1>
                 <p>Kartu Popular &amp; New yang muncul di homepage setelah section About</p>
             </div>
-
-            <!-- ADD FORM -->
             <div class="add-card">
                 <div class="add-hd"><i class="fas fa-plus"></i>Tambah Featured Vehicle</div>
                 <form method="POST">
                     <div class="fg3" style="margin-bottom:11px;">
-                        <div class="f" style="margin:0;">
-                            <label>Nama Model <span style="color:var(--gold)">*</span></label>
-                            <input type="text" name="name" required placeholder="911 Carrera T.">
-                        </div>
-                        <div class="f" style="margin:0;">
-                            <label>Subtitle / Tipe</label>
-                            <input type="text" name="subtitle" placeholder="Sports Car">
-                        </div>
-                        <div class="f" style="margin:0;">
-                            <label>Badge</label>
-                            <input type="text" name="badge" placeholder="New · Popular · Limited">
-                        </div>
+                        <div class="f" style="margin:0;"><label>Nama Model <span style="color:var(--gold)">*</span></label><input type="text" name="name" required placeholder="911 Carrera T."></div>
+                        <div class="f" style="margin:0;"><label>Subtitle / Tipe</label><input type="text" name="subtitle" placeholder="Sports Car"></div>
+                        <div class="f" style="margin:0;"><label>Badge</label><input type="text" name="badge" placeholder="New · Popular · Limited"></div>
                     </div>
-
-                    <div class="f">
-                        <label>Image URL <span style="color:var(--gold)">*</span></label>
-                        <input type="text" name="image" required placeholder="https://...">
-                    </div>
-
+                    <div class="f"><label>Image URL <span style="color:var(--gold)">*</span></label><input type="text" name="image" required placeholder="https://..."></div>
                     <div class="fg3" style="margin-bottom:11px;">
-                        <div class="f" style="margin:0;">
-                            <label>Link URL Custom</label>
-                            <input type="text" name="link" placeholder="/lending_word/app/views/frontend/model-detail.php?id=87">
-                            <small style="color:var(--t4);font-size:.67rem;margin-top:3px;">Kosongkan jika pakai Variant ID di bawah</small>
-                        </div>
-                        <div class="f" style="margin:0;">
-                            <label>Model Variant ID</label>
-                            <input type="number" name="model_variant_id" placeholder="87">
-                            <small style="color:var(--t4);font-size:.67rem;margin-top:3px;">ID dari tabel model_variants (lihat tab Variants)</small>
-                        </div>
-                        <div class="f" style="margin:0;">
-                            <label>Sort Order</label>
-                            <input type="number" name="sort_order" value="0">
-                        </div>
+                        <div class="f" style="margin:0;"><label>Link URL Custom</label><input type="text" name="link" placeholder="/lending_word/app/views/frontend/model-detail.php?id=87"><small style="color:var(--t4);font-size:.67rem;margin-top:3px;">Kosongkan jika pakai Variant ID di bawah</small></div>
+                        <div class="f" style="margin:0;"><label>Model Variant ID</label><input type="number" name="model_variant_id" placeholder="87"><small style="color:var(--t4);font-size:.67rem;margin-top:3px;">ID dari tabel model_variants (lihat tab Variants)</small></div>
+                        <div class="f" style="margin:0;"><label>Sort Order</label><input type="number" name="sort_order" value="0"></div>
                     </div>
-
-                    <label class="ck">
-                        <input type="checkbox" name="is_active" value="1" checked>
-                        <span>Aktif (tampil di homepage)</span>
-                    </label>
-
-                    <div class="factions" style="margin-top:12px;padding-top:12px;">
-                        <button type="submit" name="add_featured" class="btn-p btn-xs">
-                            <i class="fas fa-plus"></i>Tambah Vehicle
-                        </button>
-                    </div>
+                    <label class="ck"><input type="checkbox" name="is_active" value="1" checked><span>Aktif (tampil di homepage)</span></label>
+                    <div class="factions" style="margin-top:12px;padding-top:12px;"><button type="submit" name="add_featured" class="btn-p btn-xs"><i class="fas fa-plus"></i>Tambah Vehicle</button></div>
                 </form>
             </div>
-
             <div class="edit-notice">
-                <span>
-                    <i class="fas fa-info-circle" style="margin-right:6px;"></i>
-                    Card akan link ke <strong>model-detail.php?id={variant_id}</strong> atau URL custom. Section hanya muncul jika ada data aktif.
-                </span>
+                <span><i class="fas fa-info-circle" style="margin-right:6px;"></i>Card akan link ke <strong>model-detail.php?id={variant_id}</strong> atau URL custom.</span>
                 <a href="/lending_word/" target="_blank">Preview Homepage →</a>
             </div>
-
-            <!-- TABLE -->
-            <div class="tbox">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Preview</th>
-                            <th>Nama Model</th>
-                            <th>Subtitle</th>
-                            <th>Badge</th>
-                            <th>Image URL</th>
-                            <th>Link / Variant ID</th>
-                            <th>Aktif</th>
-                            <th>Order</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($featuredVehicles as $v):?>
-                        <tr>
-                            <form method="POST">
-                                <input type="hidden" name="id" value="<?= $v['id'] ?>">
-                                <td>
-                                    <?php if ($v['image']):?>
-                                    <img src="<?= htmlspecialchars($v['image']) ?>" class="timg">
-                                    <?php endif;?>
-                                </td>
-                                <td>
-                                    <input class="ti" type="text" name="name" value="<?= htmlspecialchars($v['name']) ?>">
-                                </td>
-                                <td>
-                                    <input class="ti" type="text" name="subtitle"
-                                        value="<?= htmlspecialchars($v['subtitle'] ?? '') ?>"
-                                        placeholder="Sports Car" style="min-width:100px;">
-                                </td>
-                                <td>
-                                    <input class="ti" type="text" name="badge"
-                                        value="<?= htmlspecialchars($v['badge'] ?? '') ?>"
-                                        placeholder="New" style="min-width:80px;">
-                                </td>
-                                <td>
-                                    <input class="ti" type="text" name="image"
-                                        value="<?= htmlspecialchars($v['image']) ?>"
-                                        style="min-width:170px;">
-                                </td>
-                                <td style="min-width:185px;">
-                                    <input class="ti" type="text" name="link"
-                                        value="<?= htmlspecialchars($v['link'] ?? '') ?>"
-                                        placeholder="Custom Link URL"
-                                        style="margin-bottom:4px;">
-                                    <input class="ti" type="number" name="model_variant_id"
-                                        value="<?= htmlspecialchars($v['model_variant_id'] ?? '') ?>"
-                                        placeholder="Variant ID">
-                                </td>
-                                <td style="text-align:center;">
-                                    <label class="ck" style="justify-content:center;margin:0;">
-                                        <input type="checkbox" name="is_active" value="1"
-                                            <?= !empty($v['is_active']) ? 'checked' : '' ?>>
-                                        <span></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <input class="ti ti-sm" type="number" name="sort_order"
-                                        value="<?= $v['sort_order'] ?>">
-                                </td>
-                                <td>
-                                    <div class="acts">
-                                        <button type="submit" name="update_featured" class="ab ab-u">
-                                            <i class="fas fa-check"></i>Update
-                                        </button>
-                                        <button type="submit" name="delete_featured" class="ab ab-d"
-                                            onclick="return confirm('Hapus featured vehicle ini?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </form>
-                        </tr>
-                        <?php endforeach;?>
-                        <?php if (empty($featuredVehicles)):?>
-                        <tr>
-                            <td colspan="9" style="text-align:center;color:var(--t4);padding:40px;">
-                                <i class="fas fa-star" style="display:block;font-size:1.4rem;margin-bottom:8px;opacity:0.3;"></i>
-                                Belum ada featured vehicles. Tambahkan di atas.
-                            </td>
-                        </tr>
-                        <?php endif;?>
-                    </tbody>
-                </table>
-            </div>
+            <div class="tbox"><table>
+                <thead><tr><th>Preview</th><th>Nama Model</th><th>Subtitle</th><th>Badge</th><th>Image URL</th><th>Link / Variant ID</th><th>Aktif</th><th>Order</th><th>Aksi</th></tr></thead>
+                <tbody>
+                <?php foreach ($featuredVehicles as $v):?>
+                <tr><form method="POST">
+                    <input type="hidden" name="id" value="<?= $v['id'] ?>">
+                    <td><?php if ($v['image']):?><img src="<?= htmlspecialchars($v['image']) ?>" class="timg"><?php endif;?></td>
+                    <td><input class="ti" type="text" name="name" value="<?= htmlspecialchars($v['name']) ?>"></td>
+                    <td><input class="ti" type="text" name="subtitle" value="<?= htmlspecialchars($v['subtitle'] ?? '') ?>" placeholder="Sports Car" style="min-width:100px;"></td>
+                    <td><input class="ti" type="text" name="badge" value="<?= htmlspecialchars($v['badge'] ?? '') ?>" placeholder="New" style="min-width:80px;"></td>
+                    <td><input class="ti" type="text" name="image" value="<?= htmlspecialchars($v['image']) ?>" style="min-width:170px;"></td>
+                    <td style="min-width:185px;"><input class="ti" type="text" name="link" value="<?= htmlspecialchars($v['link'] ?? '') ?>" placeholder="Custom Link URL" style="margin-bottom:4px;"><input class="ti" type="number" name="model_variant_id" value="<?= htmlspecialchars($v['model_variant_id'] ?? '') ?>" placeholder="Variant ID"></td>
+                    <td style="text-align:center;"><label class="ck" style="justify-content:center;margin:0;"><input type="checkbox" name="is_active" value="1" <?= !empty($v['is_active']) ? 'checked' : '' ?>><span></span></label></td>
+                    <td><input class="ti ti-sm" type="number" name="sort_order" value="<?= $v['sort_order'] ?>"></td>
+                    <td><div class="acts"><button type="submit" name="update_featured" class="ab ab-u"><i class="fas fa-check"></i>Update</button><button type="submit" name="delete_featured" class="ab ab-d" onclick="return confirm('Hapus featured vehicle ini?')"><i class="fas fa-trash-alt"></i></button></div></td>
+                </form></tr>
+                <?php endforeach;?>
+                <?php if (empty($featuredVehicles)):?>
+                <tr><td colspan="9" style="text-align:center;color:var(--t4);padding:40px;"><i class="fas fa-star" style="display:block;font-size:1.4rem;margin-bottom:8px;opacity:0.3;"></i>Belum ada featured vehicles. Tambahkan di atas.</td></tr>
+                <?php endif;?>
+                </tbody>
+            </table></div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             MODELS TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- MODELS TAB -->
         <div class="panel <?= $tab === 'models' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Models</h1><p>Homepage model lineup</p></div>
             <div class="add-card">
@@ -512,9 +355,7 @@ $tab = $_GET['tab'] ?? 'content';
             </table></div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             EXPLORE TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- EXPLORE TAB -->
         <div class="panel <?= $tab === 'explore' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Explore Models</h1><p>Explore section cards</p></div>
             <div class="add-card">
@@ -551,9 +392,7 @@ $tab = $_GET['tab'] ?? 'content';
             </table></div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             DISCOVER TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- DISCOVER TAB -->
         <div class="panel <?= $tab === 'discover' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Discover Features</h1><p>Landing page highlight cards</p></div>
             <div class="add-card">
@@ -594,14 +433,17 @@ $tab = $_GET['tab'] ?? 'content';
                     <td style="text-align:center;"><label class="ck" style="justify-content:center;margin:0;"><input type="checkbox" name="is_featured" value="1" <?= !empty($f['is_featured']) ? 'checked' : '' ?>><span></span></label></td>
                     <td><input class="ti" type="text" name="image" value="<?= htmlspecialchars($f['image']) ?>" style="min-width:190px;"></td>
                     <td><input class="ti ti-sm" type="number" name="sort_order" value="<?= $f['sort_order'] ?>"></td>
-                    <td><div class="acts"><button type="submit" name="update_discover" class="ab ab-u"><i class="fas fa-check"></i>Update</button><button type="submit" name="delete_discover" class="ab ab-d" onclick="return confirm('Hapus?')"><i class="fas fa-trash-alt"></i></button></div></td>
+                    <td><div class="acts">
+                        <button type="submit" name="update_discover" class="ab ab-u"><i class="fas fa-check"></i>Update</button>
+                        <a href="/lending_word/admin/discover-sections.php?id=<?= $f['id'] ?>" class="ab" style="border-color:rgba(91,156,246,0.22);color:#5b9cf6;background:rgba(91,156,246,0.05);"><i class="fas fa-layer-group"></i>Edit Sections</a>
+                        <a href="/lending_word/admin/discover-gallery.php?id=<?= $f['id'] ?>" class="ab" style="border-color:rgba(160,90,220,0.22);color:#a05adc;background:rgba(160,90,220,0.05);"><i class="fas fa-images"></i>Gallery</a>
+                        <button type="submit" name="delete_discover" class="ab ab-d" onclick="return confirm('Hapus?')"><i class="fas fa-trash-alt"></i></button>
+                    </div></td>
                 </form></tr><?php endforeach;?></tbody>
             </table></div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             NAVBAR TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- NAVBAR TAB -->
         <div class="panel <?= $tab === 'navbar' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Navbar</h1><p>Navigation links and order</p></div>
             <div class="add-card">
@@ -627,94 +469,44 @@ $tab = $_GET['tab'] ?? 'content';
             </table></div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             FOOTER TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- FOOTER TAB -->
         <div class="panel <?= $tab === 'footer' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Footer</h1><p>Newsletter, contact, social text, links and sections</p></div>
-
-            <!-- ── NEWSLETTER / CONTACT / SOCIAL TEXT ── -->
             <form method="POST">
                 <div class="card" style="margin-bottom:14px;">
-                    <div class="card-hd">
-                        <div class="c-ico ico-g"><i class="fas fa-newspaper"></i></div>
-                        <h3>Newsletter Column</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="fg3">
-                            <?php foreach ($grouped['footer'] ?? [] as $item):
-                               if (!in_array($item['key_name'], ['newsletter_title','newsletter_desc','newsletter_button','newsletter_link'])) continue; ?>
-                            <div class="f" style="margin:0;">
-                                <label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label>
-                                <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>">
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                    <div class="card-hd"><div class="c-ico ico-g"><i class="fas fa-newspaper"></i></div><h3>Newsletter Column</h3></div>
+                    <div class="card-body"><div class="fg3">
+                        <?php foreach ($grouped['footer'] ?? [] as $item): if (!in_array($item['key_name'], ['newsletter_title','newsletter_desc','newsletter_button','newsletter_link'])) continue; ?>
+                        <div class="f" style="margin:0;"><label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label><input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>"></div>
+                        <?php endforeach; ?>
+                    </div></div>
                 </div>
-
                 <div class="card" style="margin-bottom:14px;">
-                    <div class="card-hd">
-                        <div class="c-ico ico-g"><i class="fas fa-location-dot"></i></div>
-                        <h3>Locations &amp; Contacts Column</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="fg3">
-                            <?php foreach ($grouped['footer'] ?? [] as $item):
-                                if (!in_array($item['key_name'], ['contact_title','contact_desc','contact_button','contact_link'])) continue; ?>
-                            <div class="f" style="margin:0;">
-                                <label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label>
-                                <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>">
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                    <div class="card-hd"><div class="c-ico ico-g"><i class="fas fa-location-dot"></i></div><h3>Locations &amp; Contacts Column</h3></div>
+                    <div class="card-body"><div class="fg3">
+                        <?php foreach ($grouped['footer'] ?? [] as $item): if (!in_array($item['key_name'], ['contact_title','contact_desc','contact_button','contact_link'])) continue; ?>
+                        <div class="f" style="margin:0;"><label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label><input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>"></div>
+                        <?php endforeach; ?>
+                    </div></div>
                 </div>
-
                 <div class="card" style="margin-bottom:14px;">
-                    <div class="card-hd">
-                        <div class="c-ico ico-g"><i class="fas fa-share-nodes"></i></div>
-                        <h3>Social Media Column Text</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="fg2">
-                            <?php foreach ($grouped['footer'] ?? [] as $item):
-                                if (!in_array($item['key_name'], ['social_title','social_desc'])) continue; ?>
-                            <div class="f" style="margin:0;">
-                                <label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label>
-                                <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>">
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                    <div class="card-hd"><div class="c-ico ico-g"><i class="fas fa-share-nodes"></i></div><h3>Social Media Column Text</h3></div>
+                    <div class="card-body"><div class="fg2">
+                        <?php foreach ($grouped['footer'] ?? [] as $item): if (!in_array($item['key_name'], ['social_title','social_desc'])) continue; ?>
+                        <div class="f" style="margin:0;"><label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label><input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>"></div>
+                        <?php endforeach; ?>
+                    </div></div>
                 </div>
-
                 <div class="card" style="margin-bottom:20px;">
-                    <div class="card-hd">
-                        <div class="c-ico ico-d"><i class="fas fa-copyright"></i></div>
-                        <h3>Footer Bottom</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="fg2">
-                            <?php foreach ($grouped['footer'] ?? [] as $item):
-                                if (!in_array($item['key_name'], ['copyright','bottom_text'])) continue; ?>
-                            <div class="f" style="margin:0;">
-                                <label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label>
-                                <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>">
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+                    <div class="card-hd"><div class="c-ico ico-d"><i class="fas fa-copyright"></i></div><h3>Footer Bottom</h3></div>
+                    <div class="card-body"><div class="fg2">
+                        <?php foreach ($grouped['footer'] ?? [] as $item): if (!in_array($item['key_name'], ['copyright','bottom_text'])) continue; ?>
+                        <div class="f" style="margin:0;"><label><?= ucwords(str_replace('_',' ',$item['key_name'])) ?></label><input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['value']) ?>"></div>
+                        <?php endforeach; ?>
+                    </div></div>
                 </div>
-
-                <div style="display:flex;justify-content:flex-end;margin-bottom:28px;">
-                    <button type="submit" name="update" class="btn-p">
-                        <i class="fas fa-floppy-disk"></i>Save Footer Text
-                    </button>
-                </div>
+                <div style="display:flex;justify-content:flex-end;margin-bottom:28px;"><button type="submit" name="update" class="btn-p"><i class="fas fa-floppy-disk"></i>Save Footer Text</button></div>
             </form>
-
-            <!-- ── FOOTER LINK SECTIONS ── -->
             <?php foreach ($footerSections as $sec):?>
             <div class="ft-sec">
                 <div class="ft-sec-hd"><h3><?= htmlspecialchars($sec['title']) ?></h3></div>
@@ -742,8 +534,6 @@ $tab = $_GET['tab'] ?? 'content';
                 </div>
             </div>
             <?php endforeach;?>
-
-            <!-- ── SOCIAL LINKS ── -->
             <div class="ft-sec">
                 <div class="ft-sec-hd"><h3>Social Media Icons</h3></div>
                 <div class="ft-body">
@@ -772,9 +562,7 @@ $tab = $_GET['tab'] ?? 'content';
             </div>
         </div>
 
-        <!-- ══════════════════════════════════════════════════════
-             VARIANTS TAB
-        ═══════════════════════════════════════════════════════ -->
+        <!-- VARIANTS TAB -->
         <div class="panel <?= $tab === 'variants' ? 'on' : '' ?>">
             <div class="pg-hd"><h1>Model Variants</h1><p>Specs, media and configurator links</p></div>
             <div class="add-card">

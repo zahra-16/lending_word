@@ -72,4 +72,95 @@ class DiscoverFeature {
         $stmt = $this->db->prepare("DELETE FROM discover_features WHERE id = :id");
         return $stmt->execute(['id' => (int)$id]);
     }
+
+    /**
+     * Update hanya kolom sections (JSON array of section objects).
+     * Kompatibel dengan PostgreSQL (JSONB) dan MySQL (JSON / TEXT).
+     */
+    public function updateSections($id, $sectionsJson) {
+        $clean = $this->sanitizeJson($sectionsJson);
+
+        // Coba PostgreSQL JSONB cast dulu; fallback ke plain jika gagal
+        try {
+            $stmt = $this->db->prepare(
+                "UPDATE discover_features SET sections = :s::jsonb WHERE id = :id"
+            );
+            $stmt->execute(['s' => $clean, 'id' => (int)$id]);
+        } catch (\Exception $e) {
+            $stmt = $this->db->prepare(
+                "UPDATE discover_features SET sections = :s WHERE id = :id"
+            );
+            $stmt->execute(['s' => $clean, 'id' => (int)$id]);
+        }
+        return true;
+    }
+
+    // ── TAMBAHAN: update konten halaman detail ─────────────────────────────────
+    public function updateDetail($id, $data) {
+        try {
+            $stmt = $this->db->prepare("
+                UPDATE discover_features SET
+                    hero_title        = :hero_title,
+                    hero_subtitle     = :hero_subtitle,
+                    hero_image        = :hero_image,
+                    hero_video_url    = :hero_video_url,
+                    sections          = :sections::jsonb,
+                    highlights        = :highlights::jsonb,
+                    gallery           = :gallery::jsonb,
+                    related_models    = :related_models::jsonb,
+                    meta_title        = :meta_title,
+                    meta_description  = :meta_description,
+                    accent_color      = :accent_color,
+                    slug              = :slug
+                WHERE id = :id
+            ");
+        } catch (\Exception $e) {
+            // MySQL fallback (no ::jsonb cast)
+            $stmt = $this->db->prepare("
+                UPDATE discover_features SET
+                    hero_title        = :hero_title,
+                    hero_subtitle     = :hero_subtitle,
+                    hero_image        = :hero_image,
+                    hero_video_url    = :hero_video_url,
+                    sections          = :sections,
+                    highlights        = :highlights,
+                    gallery           = :gallery,
+                    related_models    = :related_models,
+                    meta_title        = :meta_title,
+                    meta_description  = :meta_description,
+                    accent_color      = :accent_color,
+                    slug              = :slug
+                WHERE id = :id
+            ");
+        }
+        return $stmt->execute([
+            'id'               => (int)$id,
+            'hero_title'       => $data['hero_title']        ?: null,
+            'hero_subtitle'    => $data['hero_subtitle']     ?: null,
+            'hero_image'       => $data['hero_image']        ?: null,
+            'hero_video_url'   => $data['hero_video_url']    ?: null,
+            'sections'         => $this->sanitizeJson($data['sections_json']       ?? '[]'),
+            'highlights'       => $this->sanitizeJson($data['highlights_json']     ?? '[]'),
+            'gallery'          => $this->sanitizeJson($data['gallery_json']        ?? '[]'),
+            'related_models'   => $this->sanitizeJson($data['related_models_json'] ?? '[]'),
+            'meta_title'       => $data['meta_title']        ?: null,
+            'meta_description' => $data['meta_description']  ?: null,
+            'accent_color'     => $data['accent_color']      ?: '#ffffff',
+            'slug'             => $this->makeSlug($data['slug'] ?? ''),
+        ]);
+    }
+
+    private function sanitizeJson($str) {
+        $str = trim($str);
+        if (empty($str)) return '[]';
+        json_decode($str);
+        return json_last_error() === JSON_ERROR_NONE ? $str : '[]';
+    }
+
+    private function makeSlug($str) {
+        $str = strtolower(trim($str));
+        $str = preg_replace('/[^a-z0-9\s\-]/', '', $str);
+        $str = preg_replace('/[\s\-]+/', '-', $str);
+        return $str ?: null;
+    }
 }
