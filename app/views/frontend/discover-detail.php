@@ -807,20 +807,22 @@ if (!empty($sections)):
             $group = [];
             $j = $i;
             while ($j < count($sections) && in_array($sections[$j]['type'] ?? '', ['intro','text-image'])):
+                // Jika bukan card pertama dan ada tab_id baru → mulai group baru
+                if ($j > $i && !empty($sections[$j]['tab_id'])) break;
                 $group[] = $sections[$j];
                 $j++;
             endwhile;
 
             $slId = 'csl' . $sliderCounter++;
             $cardStyle = $sec['card_style'] ?? 'overlay';
-            $hasTitle = !empty($sec['section_title']) || !empty($sec['tab_label']);
+            $hasTitle = !empty($sec['section_title']);
             $sectionId = !empty($sec['tab_id']) ? ' id="' . htmlspecialchars($sec['tab_id']) . '"' : '';
 ?>
 <!-- CARD SLIDER -->
 <div class="card-slider rv"<?= $sectionId ?>>
     <?php if ($hasTitle || count($group) > 1): ?>
     <div class="cs-head">
-        <h2 class="cs-head-title"><?= htmlspecialchars($sec['section_title'] ?? $sec['tab_label'] ?? '') ?></h2>
+        <?php if ($hasTitle): ?><h2 class="cs-head-title"><?= htmlspecialchars($sec['section_title'] ?? '') ?></h2><?php endif; ?>
         <?php if (count($group) > 1): ?>
         <div class="cs-nav">
             <button class="cs-nav-btn" data-sl="<?= $slId ?>" data-dir="-1"><i class="fas fa-arrow-left"></i></button>
