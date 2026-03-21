@@ -65,6 +65,12 @@ class FooterLink {
         $stmt = $this->db->prepare("DELETE FROM footer_links WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+    // Hapus semua link milik satu section (dipanggil sebelum delete section)
+    public function deleteBySection($section_id) {
+        $stmt = $this->db->prepare("DELETE FROM footer_links WHERE section_id = ?");
+        return $stmt->execute([$section_id]);
+    }
 }
 
 class SocialLink {

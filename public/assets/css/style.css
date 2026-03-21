@@ -416,7 +416,7 @@ body.c-click #cursor-ring {
 .navbar {
     position: fixed; top: 0; width: 100%;
     background: transparent !important;
-    z-index: 1000; padding: 10px 0;
+    z-index: 1000; padding: 3px 0;
     transform: translateY(-100%);
     transition: transform .9s var(--ease), background .5s ease, box-shadow .5s ease;
 }

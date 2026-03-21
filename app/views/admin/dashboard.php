@@ -484,6 +484,8 @@ if (file_exists(__DIR__ . '/../../app/models/ChatSession.php')) {
 }
 
 $tab = $_GET['tab'] ?? 'content';
+
+
 ?>
 
 <header class="topbar">
@@ -531,6 +533,14 @@ $tab = $_GET['tab'] ?? 'content';
             <a class="nav-it" href="/lending_word/admin/chat.php">
                 <i class="fas fa-comments"></i>Live Chat
                 <?php if ($chatUnread > 0):?><span class="nav-badge"><?= $chatUnread ?></span><?php endif;?>
+            </a>
+            <a class="nav-it" href="/lending_word/admin/career.php">
+                <i class="fas fa-briefcase"></i>Career
+                <?php if ($chatUnread > 0):?><span class="nav-badge"><?= $chatUnread ?></span><?php endif;?>
+            </a>
+            <a class="nav-it" href="/lending_word/admin/gpc.php">
+                <i class="fas fa-file-contract"></i>GPC
+                
             </a>
         </div>
     </aside>
@@ -838,6 +848,90 @@ $tab = $_GET['tab'] ?? 'content';
                 </div>
                 <div style="display:flex;justify-content:flex-end;margin-bottom:28px;"><button type="submit" name="update" class="btn-p"><i class="fas fa-floppy-disk"></i>Save Footer Text</button></div>
             </form>
+
+            <!-- ══ FOOTER SECTION MANAGER — TAMBAHAN BARU ══════════════
+                 Tambah / rename / hapus group section (Legal, Company, dll)
+                 Disisipkan di sini, tidak ada yang lain diubah.
+            ════════════════════════════════════════════════════════════ -->
+            <div class="ft-sec" style="margin-bottom:20px;">
+                <div class="ft-sec-hd" style="justify-content:space-between;">
+                    <h3><i class="fas fa-layer-group" style="margin-right:7px;opacity:0.45;font-size:0.72rem;"></i>Footer Section Groups</h3>
+                    <span class="sec-cnt"><?= count($footerSections) ?> section<?= count($footerSections) !== 1 ? 's' : '' ?></span>
+                </div>
+                <div class="ft-body">
+                    <div class="add-card" style="margin-bottom:14px;">
+                        <div class="add-hd"><i class="fas fa-plus"></i>Tambah Section Baru</div>
+                        <form method="POST">
+                            <div class="fg3" style="margin-bottom:10px;">
+                                <div class="f" style="margin:0;">
+                                    <label>Nama Section <span style="color:var(--gold)">*</span></label>
+                                    <input type="text" name="section_title" required placeholder="contoh: Legal, Company, Services">
+                                </div>
+                                <div class="f" style="margin:0;">
+                                    <label>Sort Order</label>
+                                    <input type="number" name="section_sort_order" value="0" style="max-width:110px;">
+                                </div>
+                                <div class="f" style="margin:0;justify-content:flex-end;">
+                                    <label>&nbsp;</label>
+                                    <button type="submit" name="add_footer_section" class="btn-p btn-xs">
+                                        <i class="fas fa-plus"></i>Tambah Section
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <?php if (!empty($footerSections)): ?>
+                    <div class="tbox" style="margin-bottom:0;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:36px;">#</th>
+                                    <th>Nama Section</th>
+                                    <th style="width:120px;">Sort Order</th>
+                                    <th style="width:76px;text-align:center;">Links</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($footerSections as $sec): ?>
+                                <tr>
+                                    <form method="POST">
+                                        <input type="hidden" name="id" value="<?= $sec['id'] ?>">
+                                        <td style="color:var(--t4);font-size:0.7rem;font-family:'Syne',sans-serif;font-weight:700;"><?= $sec['id'] ?></td>
+                                        <td><input class="ti" type="text" name="section_title" value="<?= htmlspecialchars($sec['title']) ?>" style="min-width:160px;"></td>
+                                        <td><input class="ti ti-sm" type="number" name="section_sort_order" value="<?= $sec['sort_order'] ?? 0 ?>"></td>
+                                        <td style="text-align:center;">
+                                            <span style="font-size:0.72rem;color:var(--t3);background:rgba(255,255,255,0.60);border:1px solid var(--b2);padding:2px 9px;border-radius:var(--r4);">
+                                                <?= count($sec['links']) ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="acts">
+                                                <button type="submit" name="update_footer_section" class="ab ab-u">
+                                                    <i class="fas fa-check"></i>Rename
+                                                </button>
+                                                <button type="submit" name="delete_footer_section" class="ab ab-d"
+                                                    onclick="return confirm('Hapus section \'<?= htmlspecialchars(addslashes($sec['title'])) ?>\' beserta <?= count($sec['links']) ?> link-nya?\nTindakan ini tidak bisa dibatalkan.')">
+                                                    <i class="fas fa-trash-alt"></i>Hapus
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </form>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <?php else: ?>
+                    <div style="text-align:center;padding:28px 16px;color:var(--t4);">
+                        <i class="fas fa-layer-group" style="display:block;font-size:1.5rem;margin-bottom:10px;opacity:0.25;"></i>
+                        Belum ada footer sections. Tambahkan di atas.
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <!-- ══ END FOOTER SECTION MANAGER ══ -->
+
             <?php foreach ($footerSections as $sec):?>
             <div class="ft-sec">
                 <div class="ft-sec-hd"><h3><?= htmlspecialchars($sec['title']) ?></h3></div>
