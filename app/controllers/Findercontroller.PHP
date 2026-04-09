@@ -22,7 +22,7 @@ class FinderController {
         $this->navbarModel = new NavbarLink();
         $this->footerSectionModel = new FooterSection();
         $this->socialLinkModel = new SocialLink();
-        $this->vehicleModel = new Vehicle();
+        $this->vehicleModel = new Vehicle(); 
         $this->modelSeriesModel = new ModelSeries();
         $this->bodyTypeModel = new BodyType();
         $this->porscheCenterModel = new PorscheCenter();
